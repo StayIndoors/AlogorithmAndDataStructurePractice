@@ -18,6 +18,7 @@
 //       '####'
 
 // Solution 1: Iterating through column (j), checking if current column is equal or less than the current row while iterating though the rows (i)
+// As 'n' increased by one, thanks to the nested for loop, we did n*n things. RUNTIME COMPLEXITY: N^2, Quadtratic Runtime
 function steps(n) {
     // From 0 to n iternate through the rows
     for (var i = 0; i < n; i++) {

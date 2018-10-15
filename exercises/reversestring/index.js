@@ -21,6 +21,7 @@
 // }
 
 // Solution 2: Using For Loop
+// Each additional character = 1 step through 1 loop. RUNTIME COMPLEXITY: N or linear runtime.
 function reverse(str) {
     let reversed = '';
 
