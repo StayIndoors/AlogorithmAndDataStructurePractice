@@ -8,6 +8,18 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+// // Iterative Solution
+// // Linear Time Solution
+// // As n is increased, the loop (which is all of the work in this case) must run 1 additional time.
+// // The prefered solution
+function fib(n) {
+    let sequence = [0, 1];
+
+    for (var i = 2; i <= n; i++) {
+        sequence.push(sequence[i - 2] + sequence[i - 1]);
+    }
+
+    return sequence[n];
+}
 
 module.exports = fib;
