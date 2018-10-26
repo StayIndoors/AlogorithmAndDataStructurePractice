@@ -26,6 +26,31 @@
 // // Exponential Time Solution
 // // With recursion, the sought value is broken down into pieces (n - 1) and (n - 2) until left with a collection of fib(0) and fib(1) (or 0 and 1). Those added together have given us our value. When you increase the initial n (the position of the value in question) the amount of time fib() must be called increases exponentially.
 // // A terrible solution to actually use
+// function fib(n) {
+//     if (n < 2 ) {
+//         return n;
+//     }
+
+//     return fib(n - 1) + fib(n - 2);
+// }
+
+// // Improved Recursive Solution
+// // Exponential Time Solution
+// // With MEMOIZATION, we store the arguments of function call along with the result. If the function is called again with the same arguments, return the precomputed result, rather than running the function again.
+function memoize(fn) {
+    const cache = {};
+    return function(...args) {
+        if (cache[args]) {
+            return cache[args];
+        }
+
+        const result = fn.apply(this, args);
+        cache[args] = result;
+
+        return result;
+    };
+}
+
 function fib(n) {
     if (n < 2 ) {
         return n;
@@ -33,5 +58,18 @@ function fib(n) {
 
     return fib(n - 1) + fib(n - 2);
 }
+
+fib = memoize(fib);
+
+// Logically it works like this:
+// function slowFib(n) {
+//     if (n < 2 ) {
+//         return n;
+//     }
+
+//     return fib(n - 1) + fib(n - 2);
+// }
+
+// const fib = memoize(slowFib);
 
 module.exports = fib;
