@@ -8,6 +8,22 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+//// First In First Out
+
+class Queue {
+    constructor() {
+        // data is a new we made up. could be anything.
+        this.data = [];
+    }
+
+    add(record) {
+        this.data.unshift(record);
+    }
+
+    remove(record) {
+        return this.data.pop();
+    }
+}
+
 
 module.exports = Queue;
