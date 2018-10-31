@@ -22,6 +22,10 @@
 //    q.remove() // 2
 //    q.remove() // 'There'
 
+//// RUNTIME COMPLEXITY: O(n + m)
+//// SPACE COMPLEXITY: O(n + m)
+//// Iterates through 2 different collections and stores them.
+
 const Queue = require('./queue');
 
 function weave(sourceOne, sourceTwo) {
