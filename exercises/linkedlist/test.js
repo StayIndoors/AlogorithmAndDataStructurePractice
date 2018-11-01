@@ -18,7 +18,7 @@ describe.skip('A Node', () => {
   });
 });
 
-describe('Insert First', () => {
+describe.skip('Insert First', () => {
   test('appends a node to the start of the list', () => {
     const l = new List();
     l.insertFirst(1);
@@ -28,7 +28,7 @@ describe('Insert First', () => {
   });
 });
 
-describe.skip('Size', () => {
+describe('Size', () => {
   test('returns the number of items in the linked list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
