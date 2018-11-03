@@ -148,6 +148,10 @@ class LinkedList {
 
     // LOOP - can easily keep track of the index if needed
     forEach(func) {
+        if (!this.head) {
+            return null;
+        }
+
         let node = this.head;
         let counter = 0;
 
