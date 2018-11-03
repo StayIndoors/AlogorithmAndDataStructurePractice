@@ -145,6 +145,38 @@ class LinkedList {
         }
         // Simplifiying by reusing insertAt method needs to run size(), thus making it less efficient due to the extra loop
     }
+
+    // LOOP - can easily keep track of the index if needed
+    forEach(func) {
+        let node = this.head;
+        let counter = 0;
+
+        while (node) {
+            func(node, counter);
+            node = node.next;
+            counter++;
+        }
+    }
+
+    // RECURSIVE
+    // forEach(func) {
+    //     function modifyNode(node, fn) {
+    //         if (node) {
+    //             func(node);
+    //             modifyNode(node.next, fn);
+    //         }
+    //     }
+    //     modifyNode(this.head, func, 0);
+    // }
+
+    // For of loop automatically look for Symbol.Iterator. The * makes it a generator.
+    *[Symbol.iterator]() {
+        let node = this.head;
+        while (node) {
+            yield node;
+            node = node.next;
+        }
+    }
 }
 
 module.exports = { Node, LinkedList };
