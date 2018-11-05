@@ -12,6 +12,9 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
+//// LINEAR TIME - A single loop.
+//// CONSTANT SPACE - Nothing is created or destroyed. The data structure does not change in size.
+
 function midpoint(list) {
     if (!list.head) {
         return null;
