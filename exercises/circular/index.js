@@ -12,6 +12,27 @@
 //   c.next = b;
 //   circular(l) // true
 
-function circular(list) {}
+//// LINEAR TIME COMPLEXITY {O(n)}
+//// CONSTANT SPEED COMPLEXITY {O(1)}
+
+function circular(list) {
+    if (!list.head) {
+        return null;
+    }
+
+    let walker = list.head;
+    let runner = list.head;
+
+    while (runner.next && runner.next.next) {
+        walker = walker.next;
+        runner = runner.next.next;
+
+        if (walker === runner) {
+            return true;
+        }
+    }
+
+    return false;
+}
 
 module.exports = circular;
