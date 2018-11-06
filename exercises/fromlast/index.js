@@ -11,6 +11,23 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+//// LINEAR TIME COMPLEXITY
+//// CONSTANT SPACE COMPLEXITY
+
+function fromLast(list, n) {
+    let walker = list.head;
+    let runner = list.head;
+
+    for (i = 0; i < n; i++) {
+        runner = runner.next;
+    }
+
+    while (runner.next) {
+        walker = walker.next
+        runner = runner.next;
+    }
+
+    return walker;
+}
 
 module.exports = fromLast;
