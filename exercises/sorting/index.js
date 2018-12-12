@@ -18,7 +18,20 @@ function bubbleSort(arr) {
 function selectionSort(arr) {
     // WORST CASE RUNTIME: n^2
     // This requires significantly more work as the data set grows. ONLY USE FOR KNOWN SMALL DATA SETS
-
+    for (let i = 0; i < arr.length; i++) {
+        let indexOfMin = i;
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[indexOfMin]) {
+                indexOfMin = j;
+            }
+        }
+        if (i !== indexOfMin) {
+            let temp = arr[indexOfMin];
+            arr[indexOfMin] = arr[i];
+            arr[i] = temp;
+        }
+    }
+    return arr;
 }
 
 function mergeSort(arr) {
