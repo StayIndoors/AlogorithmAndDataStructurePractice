@@ -37,7 +37,14 @@ function selectionSort(arr) {
 function mergeSort(arr) {
     // WORST CASE RUNTIME: n*log(n)
     // This requires slightly more work as the data set grows. USE FOR LARGER OR UNKOWN DATA SET SIZES
+    if (arr.length === 1) {
+        return arr;
+    }
 
+    const centerIndex = Math.floor(arr.length / 2);
+    const left = arr.slice(0, centerIndex);
+    const right = arr.slice(centerIndex);
+    return merge(mergeSort(left), mergeSort(right));
 }
 
 function merge(left, right) {
